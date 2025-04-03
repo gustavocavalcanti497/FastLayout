@@ -14,5 +14,70 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.18</version>
+    <scope>compile</scope>
+</dependency>
+
+  <!-- https://mvnrepository.com/artifact/io.github.adven27/env-container -->
+<dependency>
+    <groupId>io.github.cdimascio</groupId>
+    <artifactId>dotenv-java</artifactId>
+    <version>3.0.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/rds -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>rds</artifactId>
+    <version>2.31.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/iam -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>iam</artifactId>
+    <version>2.31.1</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ssooidc -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>ssooidc</artifactId>
+    <version>2.31.8</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.12.782</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sso -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>sso</artifactId>
+    <version>2.31.8</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/auth -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>auth</artifactId>
+    <version>2.31.8</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/software.amazon.jdbc/aws-advanced-jdbc-wrapper -->
+<dependency>
+    <groupId>software.amazon.jdbc</groupId>
+    <artifactId>aws-advanced-jdbc-wrapper</artifactId>
+    <version>2.5.5</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.2.0</version>
+</dependency>
   </dependencies>
+
+
 </project>

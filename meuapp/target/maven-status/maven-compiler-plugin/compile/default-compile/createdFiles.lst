@@ -1,0 +1,7 @@
+com\fastlayout\auth\GetRdsToken.class
+com\fastlayout\sql\Querys.class
+com\fastlayout\Menu.class
+com\fastlayout\database\DatabaseConnection.class
+com\fastlayout\config\Arquivos.class
+com\fastlayout\Main.class
+com\fastlayout\database\ConexaoDados.class
