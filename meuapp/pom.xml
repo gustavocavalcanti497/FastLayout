@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.fastlayout</groupId>
-  <artifactId>meuapp</artifactId>
+  <artifactId>Fastlayout</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>meuapp</name>
+  <version>1.0</version>
+  <name>Fastlayout</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -14,13 +14,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.5.18</version>
-    <scope>compile</scope>
-</dependency>
 
   <!-- https://mvnrepository.com/artifact/io.github.adven27/env-container -->
 <dependency>
@@ -28,43 +21,7 @@
     <artifactId>dotenv-java</artifactId>
     <version>3.0.0</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/rds -->
-<dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>rds</artifactId>
-    <version>2.31.1</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/iam -->
-<dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>iam</artifactId>
-    <version>2.31.1</version>
-    <scope>test</scope>
-</dependency>
-<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ssooidc -->
-<dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>ssooidc</artifactId>
-    <version>2.31.8</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
-<dependency>
-    <groupId>com.amazonaws</groupId>
-    <artifactId>aws-java-sdk</artifactId>
-    <version>1.12.782</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sso -->
-<dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>sso</artifactId>
-    <version>2.31.8</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/auth -->
-<dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>auth</artifactId>
-    <version>2.31.8</version>
-</dependency>
+
 <!-- https://mvnrepository.com/artifact/software.amazon.jdbc/aws-advanced-jdbc-wrapper -->
 <dependency>
     <groupId>software.amazon.jdbc</groupId>
@@ -78,6 +35,40 @@
     <version>9.2.0</version>
 </dependency>
   </dependencies>
+    <build>
+    <plugins>
+       <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.4.1</version>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+            </goals>
+            <configuration>
+                <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <mainClass>com.fastlayout.Main</mainClass>
+                    </transformer>
+                </transformers>
+                <dependency-reduced-pom>false</dependency-reduced-pom>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 
+    </plugins>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>gerarToken.ps1</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+    </resources>
+</build>
 
 </project>

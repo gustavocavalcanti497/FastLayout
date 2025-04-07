@@ -36,6 +36,8 @@ public class DatabaseConnection {
         properties.setProperty("password", dbPsw);
         properties.setProperty(PropertyDefinition.TCP_KEEP_ALIVE.name, "true");
         properties.setProperty("enableCleartextPlugin", "true");
+        properties.setProperty("useUnicode", "true");
+        properties.setProperty("characterEncoding", "ISO-8859-1");
         
 
 

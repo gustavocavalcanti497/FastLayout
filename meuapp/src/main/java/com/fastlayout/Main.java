@@ -15,7 +15,7 @@ public class Main
 {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException{
-        Class.forName("software.amazon.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
 
         Menu menu = new Menu();
@@ -58,6 +58,18 @@ public class Main
                     if (resultadoComparacao[i] != null){
                         System.out.println(resultadoComparacao[i]);
                     }                    
+                }
+                boolean todosNulos = true;
+
+                for(String item : resultadoComparacao){
+                    if(item !=null){
+                        todosNulos = false;
+                    }
+                }
+                
+                if (todosNulos){
+                    System.out.println("Não há layouts na pasta para serem upados");
+                    System.exit(1);
                 }
 
                 int codigoEmp = querys.getCodigoEmp(conn,dados.getBanco());

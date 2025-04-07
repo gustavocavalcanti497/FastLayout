@@ -8,19 +8,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Arquivos {
-    private String pasta = "src/main/resources/layouts";
+    
+    private String pasta = "layouts";
     private String[] nomesArquivos;
 
     public String[] lerNomes(){
         File diretorio = new File(pasta);
         if (!diretorio.exists() || !diretorio.isDirectory()) {
             System.out.println("A pasta de layouts não foi criada ou não está no caminho correto.");
-            System.out.println("Por favor crie a pasta dentro do projeto no caminho /src/main/resources/layouts");
+            System.out.println("Por favor crie a pasta dentro do projeto no caminho /layouts");
             System.exit(1);
         }
         File[] arquivos = diretorio.listFiles();
         if(arquivos == null || arquivos.length == 0){
-            System.out.println("Nenhum arquivo localizado, por favor insira os layouts dentro da pasta /src/main/resources/layouts/");
+            System.out.println("Nenhum arquivo localizado, por favor insira os layouts dentro da pasta /layouts");
             System.exit(1);
         }
 
@@ -39,7 +40,7 @@ public class Arquivos {
                 }
             }
         }
-        System.out.println("Layouts localizados:");
+        System.out.println("Arquivos localizados:");
         System.out.println(" ");
         for (int i = 0; i< nomesArquivos.length; i++){
             System.out.println(nomesArquivos[i]);

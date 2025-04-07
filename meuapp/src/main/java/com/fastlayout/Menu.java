@@ -8,15 +8,13 @@ import com.fastlayout.database.ConexaoDados;
 public class Menu {
     public ConexaoDados exibir() throws IOException {
         int opcao = 0;
-        boolean continuar = false;
-        String regiao;
-        String perfil;
         boolean ativo = true;
         Scanner scanner = new Scanner(System.in);
         
 
         while (ativo) {
 
+            
             
             // Solicitando qual servidor o cliente está alocado
             System.out.println("Digite onde o banco está alocado:");
